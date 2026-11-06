@@ -3,7 +3,10 @@ package com.ocrpdf.android
 import android.graphics.Rect
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
 
+@RunWith(RobolectricTestRunner::class)
 class TextMaskPlannerTest {
     @Test
     fun expandsAndClampsRegionToImageBounds() {
