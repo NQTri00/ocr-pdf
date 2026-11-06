@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-pdf"
+version = "0.1.0"
+description = "Local-first, layout-preserving English-to-Vietnamese PDF translation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["PyMuPDF>=1.24,<2", "Pillow>=10,<13"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.6,<1"]
+
+[project.scripts]
+ocr-pdf = "ocr_pdf.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
